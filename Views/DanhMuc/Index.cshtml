@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "Danh sách danh mục";
+}
+<div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Ten Danh Muc</th>
+                <th>Mo ta</th>
+                @*<th>Id Danh Muc Cha</th>*@
+                <th>Ten Danh Muc Cha</th>
+            </tr>
+        </thead>
+        <tbody id="categoryList">
+
+        </tbody>
+    </table>
+</div>
+<script type="text/javascript">
+        $(document).ready(function () {
+            // AJAX request to load categories
+            $.ajax({
+                url: '@Url.Action("GetListDanhMuc", "DanhMuc")',
+                type: 'POST',
+                dataType: 'json',
+                success: function (response) {
+                    //var str = "";
+                    //$.each(data, function (Index, danhMuc) {
+                    //    str += "<tr><td>" + danhMuc.Id + "</td>\
+                    //                <td>"+ danhMuc.TenDanhMuc + "</td>\
+                    //                <td>" + danhMuc.MoTa + "</td>\
+                    //                <td>" + danhMuc.IdDanhMucCha + "</td>\
+                    //            </tr>\
+                    //    ";
+                    //});
+                    //console.log(str);
+                    //document.getElementById("categoryList").innerHTML = str;
+                    let danhSachDM = response.data;
+                    let danhMucMap = {};
+                    $.each(danhSachDM, function (Index, danhMuc) {
+                        danhMucMap[danhMuc.Id] = danhMuc;
+                    });
+
+
+                    let tbody = $("#categoryList");
+                    $.each(danhSachDM, function (Index, danhMuc) {
+                        let tenDMCha = "Khong co";
+                        if (danhMuc.IdDanhMucCha) {
+                            let danhMucCha = danhMucMap[danhMuc.IdDanhMucCha];
+                            tenDMCha = danhMucCha.TenDanhMuc;
+                        }
+
+                        tbody.append("<tr><td>" + danhMuc.Id + "</td>\
+                                    <td>"+ danhMuc.TenDanhMuc + "</td>\
+                                    <td>" + danhMuc.MoTa + "</td>\
+                                    <td>" + tenDMCha + "</td>\
+                                </tr>\
+                        ");
+
+                    });
+
+                },
+                error: function () {
+                    alert('Error loading categories.');
+                }
+            });
+        });
+</script>
+

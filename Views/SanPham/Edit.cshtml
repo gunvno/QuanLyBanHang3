@@ -1,0 +1,19 @@
+﻿@model QuanLyBanHang2.Models.SanPham
+@{
+    ViewBag.Title = "Sửa Sản Phẩm";
+    String id = Request["id"];
+}
+<form action="/Sanpham/PostEdit" method="post">
+    <label for="MaSanPham">MaSanPham:</label>
+    <input type="text" name="MaSanPham" value="@Model.MaSanPham" readonly />
+
+    <label for="TenSanPham">TenSanPham:</label>
+    <input type="text" name="TenSanPham" value="@Model.TenSanPham" />
+    <label for="DonViTinh">DonViTinh:</label>
+    <input type="text" name="DonViTinh" value="@Model.DonViTinh" />
+    <input type="submit" name="Submit" value="Sửa" />
+    <a href="@Url.Action("Index")" class="btn btn-default">Hủy</a>
+
+</form>
+
+

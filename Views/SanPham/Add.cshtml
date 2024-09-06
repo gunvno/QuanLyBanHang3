@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "Tạo mới sản phẩm";
+}
+
+
+<form action="/Sanpham/Create" method="post">
+    <label for="MaSanPham">MaSanPham: </label>
+    <input type="text" name="MaSanPham"  value="" />
+    <label for="TenSanPham">TenSanPham</label>
+    <input type="text" name="TenSanPham" value="" />
+    <label for="DonViTinh">DonViTinh</label>
+    <input type="text" name="DonViTinh" value="" />
+    <input type="submit" name="Submit" value="Thêm mới" />
+</form>

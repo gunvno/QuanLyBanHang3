@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DatabaseSanPham">
+  <DataContextMoniker Name="/DatabaseSanPhamDataContext" />
+  <nestedChildShapes>
+    <classShape Id="09dac303-ab74-4598-8b7c-7f8775e51b88" absoluteBounds="2.125, 1.375, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DatabaseSanPhamDataContext/SanPham" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4e93352f-dab7-4710-be95-7deeb163be28" absoluteBounds="2.14, 1.835, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="7e711ba1-cd8e-45ff-a043-ca5d7fcef3fd" absoluteBounds="5.875, 2.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/DatabaseSanPhamDataContext/tbl_DanhMuc" />
+      <nestedChildShapes>
+        <elementListCompartment Id="300ed7a2-a9ae-4520-bfee-b9238c654c4d" absoluteBounds="5.89, 2.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
